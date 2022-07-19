@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import Testcomponent from "./Testcomponent";
 
 const languages = [
   { value: "", text: "Options" },
@@ -12,6 +13,7 @@ export const Myself = () => {
   const [lang, setLang] = useState("en");
   const { t } = useTranslation();
 
+  console.log(t("statement_01"));
   let loc = "http://localhost:3000/";
 
   const handleChange = (e) => {
@@ -33,6 +35,8 @@ export const Myself = () => {
       <h1>{t("statement_01")}</h1>
       <h1>{t("statement_02")}</h1>
       <h1>{t("statement_03")}</h1>
+
+      <Testcomponent translateArray={t} />
     </div>
   );
 };
